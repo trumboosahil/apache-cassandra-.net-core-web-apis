@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "384cad85-0a7c-4c10-9621-89f0e44257a5": {
+      "ProjectGuid": "384cad85-0a7c-4c10-9621-89f0e44257a5",
+      "DisplayName": "CassandraAPI",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
