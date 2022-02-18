@@ -22,9 +22,9 @@ namespace CassandraAPI.Services
                 //If the session is null then create a new one
                 if (session == null)
                 {
-                    string path = configuration.GetValue<string>("path1", "C:\\Git\\cassandra\\secure-connect-school.zip");
-                    string username = configuration.GetValue<string>("username1", "fWptJlyoYZWdMOZMRZnZZFTp");
-                    string password = configuration.GetValue<string>("password", "ijbHotG.2zYDy842KR8yuKD_nA39JquwJh0xYn3a6uCYN.0hGep8vH0MBk5KjGNJc2JH3t7c8d4A9veMe8OqSajo1sOuj3QAWS8FQwJrLYeBec8b,qMTgAbiov.XpDXj");
+                    string path = configuration.GetValue<string>("path1", "");
+                    string username = configuration.GetValue<string>("username1", "");
+                    string password = configuration.GetValue<string>("password", "");
                     session =
                     Cluster.Builder()
                          .WithCloudSecureConnectionBundle(path)
