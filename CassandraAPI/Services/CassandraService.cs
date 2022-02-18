@@ -27,8 +27,7 @@ namespace CassandraAPI.Services
                     string password = configuration.GetValue<string>("password", "");
                     session =
                     Cluster.Builder()
-                         .WithCloudSecureConnectionBundle(path)
-                         //or if on linux .WithCloudSecureConnectionBundle(@"/PATH/TO/>>secure-connect-school.zip")
+                         .WithCloudSecureConnectionBundle(path)                         
                          .WithCredentials(username, password)
                          .Build()
                          .Connect("atmospheric");
