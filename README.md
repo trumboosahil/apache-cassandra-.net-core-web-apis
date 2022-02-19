@@ -12,6 +12,6 @@ In our data one driver in one task as multiple shipments
 | 24      | 3        | 78,998,887 |
 | 25      | 4        |123,44,567,98 |
 
-In cassandra create secondary index on OrderIDs
+In cassandra create secondary index on OrderIDs this is not possble in SQL
 
 Select * from OrderIDs CONTAINS 21
