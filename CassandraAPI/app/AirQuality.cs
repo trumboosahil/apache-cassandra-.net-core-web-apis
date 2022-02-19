@@ -1,4 +1,5 @@
-﻿using Cassandra.Data.Linq;
+﻿using Cassandra;
+using Cassandra.Data.Linq;
 using Cassandra.Mapping;
 using CassandraAPI.Interfaces;
 using CassandraAPI.Model;
@@ -29,6 +30,17 @@ namespace CassandraAPI.app
         {
             var airqualityts = new Table<Airqualityts>(Service.Session);
             var airqualityts1 = await airqualityts.Where(s => s.stationid == uid).ExecuteAsync();
+            return airqualityts1.OrderBy(s => s.measurementdate).ToList();
+        }
+
+        public async Task<List<Airqualityts>> GetAirqualitytsByQueryAsync()
+        {
+            // var ps = Service.Session.Prepare();
+            IMapper mapper = new Mapper(Service.Session);
+            var st = new SimpleStatement("select * from atmospheric.airqualityts");
+            var airqualityts1 = await mapper.FetchAsync<Airqualityts>("select * from atmospheric.airqualityts");
+            // var airqualityts = Service.Session.ExecuteAsync(ps);
+
             return airqualityts1.OrderBy(s => s.measurementdate).ToList();
         }
     }

@@ -15,11 +15,19 @@ namespace CassandraAPI.Controllers
         {
             this.airQuality = airQuality;
         }
-        [Route("airquality/GetAll")]
+        [Route("airquality/{uid}")]
         [HttpGet]
         public async Task<IActionResult> GetAll(Guid uid)
         {
             var list = await airQuality.GetAirqualitytsAsync(uid);
+            return Ok(list);
+
+        }
+        [Route("airquality/GetAllQuery")]
+        [HttpGet]
+        public async Task<IActionResult> GetAllQuery()
+        {
+            var list = await airQuality.GetAirqualitytsByQueryAsync();
             return Ok(list);
 
         }
